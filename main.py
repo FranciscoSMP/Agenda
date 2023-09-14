@@ -30,22 +30,31 @@ while True:
     print('\t1. Siguiente')
     print('\tx. Salir')
 
-    op = input('\n\t')
-
-    if op == 'x':
-       break
-
-"""
-if int(op) == 0:
-    os.system('cls')
-    amonth = month - 1
-    cal = calendar.month(year, amonth)
-    cal_lines = cal.splitlines()
-
-    nombre_mes = cal_lines[0].split()[0].capitalize() + ' ' + cal_lines[0].split()[1]
-
-    print('\n\t      ' + nombre_mes)
-    cal_formatted = '\t   ' + '\n\t   '.join(cal_lines[1:])
+    op = input('\n\t').lower()
     
-    print(cal_formatted)"""
- 
+    if op == '0':
+        
+        os.system('cls')
+        
+        print('\n\t\t============')
+        print('\t\t   AGENDA')
+        print('\t\t============')
+        
+        cal = calendar.month(year, month-1)
+        
+        cal_lines = cal.splitlines()
+
+        nombre_mes = cal_lines[0].split()[0].capitalize() + ' ' + cal_lines[0].split()[1]
+        
+        print('\n\t      ' + nombre_mes)
+        cal_formatted = '\t   ' + '\n\t   '.join(cal_lines[1:])
+        print(cal_formatted)
+    
+    elif op == '1':
+        pass
+        
+    elif op == 'x':
+        break
+    
+    else:
+        print('Opción no válida. Por favor, eliga una opción válida.')
