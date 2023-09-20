@@ -32,8 +32,17 @@ def mostrar_calendario(year, month):
     print('\t1. Siguiente')
     print('\tx. Salir')
 
-mostrar_calendario(year, month);
-op = input('\n\t').lower()
-if op == '0':
-   month2 = fecha_actual.month-1
-   mostrar_calendario(year, month2); 
+while True:
+
+    mostrar_calendario(year, month);
+    op = input('\n\t').lower()
+
+    if op == '0':
+        month = month - 1;
+        mostrar_calendario(year, month);
+    
+    elif op == 'x':
+        break
+        
+    else:
+        print('Opción no válida. Por favor, eliga una opción válida.')
