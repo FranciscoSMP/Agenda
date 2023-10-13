@@ -30,16 +30,31 @@ def mostrar_calendario(year, month):
 
     print('\n\t0. Anterior')
     print('\t1. Siguiente')
+    print('\t2. Agendar Evento')
     print('\tx. Salir')
 
 while True:
 
-    mostrar_calendario(year, month);
+    mostrar_calendario(year, month)
     op = input('\n\t').lower()
 
     if op == '0':
-        month = month - 1;
-        mostrar_calendario(year, month);
+        if month == 1:
+            month = 12
+            year -= 1
+        else:
+            month -= 1
+    
+    if op == '1':
+        if month == 12:
+            month = 1
+            year += 1
+        else:
+            month += 1
+    
+    if op == '2':
+        print('Ingrese el día en que desea agendar el evento')
+        dia = input('\n\t')
     
     elif op == 'x':
         break
