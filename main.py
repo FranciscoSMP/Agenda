@@ -53,9 +53,23 @@ while True:
             month += 1
     
     if op == '2':
-        print('Ingrese el día en que desea agendar el evento')
+        print('\n\tIngrese el día en que desea agendar el evento')
         dia = input('\n\t')
-    
+        os.system('cls')
+        print('\n\t\t=================')
+        print('\t\t  AGENDAR EVENTO')
+        print('\t\t=================')
+        print('\n\tTítulo del Evento')
+        titulo = input('\t')
+        print('\n\tHora de Inicio (formato de 24hrs)')
+        hora = input('\t')
+        print('\n\tDuración (minutos)')
+        duracion = input('\t')
+        
+        guardar = open("agenda.txt", "a")
+        guardar.write(dia + "/" + month)
+        guardar.close()
+        
     elif op == 'x':
         break
         
