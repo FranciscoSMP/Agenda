@@ -67,7 +67,8 @@ while True:
         duracion = input('\t')
         
         guardar = open("agenda.txt", "a")
-        guardar.write(dia + "/" + month)
+        guardar.write("\nDía: " + dia + "/" + str(month) + "/" + str(year))
+        guardar.write("\nTítulo: " + titulo)
         guardar.close()
         
     elif op == 'x':
