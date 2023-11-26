@@ -31,6 +31,7 @@ def mostrar_calendario(year, month):
     print('\n\t0. Anterior')
     print('\t1. Siguiente')
     print('\t2. Agendar Evento')
+    print('\t3. Ver Eventos')
     print('\tx. Salir')
 
 while True:
@@ -67,12 +68,31 @@ while True:
         duracion = input('\t')
         
         guardar = open("agenda.txt", "a")
-        guardar.write("\nDía: " + dia + "/" + str(month) + "/" + str(year))
+        guardar.write("Día: " + dia + "/" + str(month) + "/" + str(year))
         guardar.write("\nTítulo: " + titulo)
+        guardar.write("\nHora de Inicio: " + hora)
+        guardar.write("\nDuración: " + duracion + "\n\n")
         guardar.close()
+    
+    if op == '3':
+        try:
+            with open("agenda.txt", "r") as archivo:
+                
+                contenido = archivo.read()
+                
+                for linea in archivo:
+                    print(linea)
+                    
+        except FileNotFoundError:
+            print("No existebn eventos agendados.")
+        except I0Error:
+            print("Error al mostrar eventos agendados.")
+        else:
+            print("Eventos agendados:")
+            print(contenido)
         
     elif op == 'x':
         break
-        
+      
     else:
         print('Opción no válida. Por favor, eliga una opción válida.')

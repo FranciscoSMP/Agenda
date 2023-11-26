@@ -1,3 +1,10 @@
-
-Día: 22/11/2023
+Día: 26/11/2023
 Título: Desayunar
+Hora de Inicio: 8
+Duración: 15
+
+Día: 26/11/2023
+Título: Bañarme
+Hora de Inicio: 11
+Duración: 15
+
